@@ -22,13 +22,14 @@ router.get("/", (req, res) => {
   res.render("../views/places/index", { places });
 });
 router.get("/new", (req, res) => {
-  res.send("This Is GET /places/NEW");
+  res.render("../views/places/createForm");
 });
-router.post("/:id", (req, res) => {
-  res.send(`This Is GET /places/${req.params.id}`);
+router.get("/:id", (req, res) => {
+  // res.send(`This Is GET /places/${req.params.id}`);
+  res.render("../views/places/showDetails");
 });
 router.get("/:id/edit", (req, res) => {
-  res.send(`This Is GET EDIT /places/${req.params.id}/edit`);
+  res.render("../views/places/editForm");
 });
 
 //DELETE
