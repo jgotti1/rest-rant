@@ -38,5 +38,15 @@ main.home {
   color: red;
 }
 .index img {
+  display: block;
   height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* .index {
+  text-align: center;
+  font-family: sans-serif;
+} */
+.located {
+  padding-top: 10px;
 }
