@@ -10,9 +10,16 @@ router.get("/new", (req, res) => {
   res.render("../views/places/new");
 });
 router.get("/:id", (req, res) => {
-  // res.send(`This Is GET /places/${req.params.id}`);
-  res.render("../views/places/showDetails");
+  let id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render("error404");
+  } else if (!places[id]) {
+    res.render("error404");
+  } else {
+    res.render("../views/places/show", { place: places[id] });
+  }
 });
+
 router.get("/:id/edit", (req, res) => {
   res.render("../views/places/editForm");
 });

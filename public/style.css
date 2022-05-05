@@ -1,6 +1,7 @@
 h1 {
   text-align: center;
-  color: cornflowerblue;
+
+  margin-top: 20px;
 }
 img.food1 {
   width: 200px;
@@ -38,15 +39,89 @@ main.home {
   color: red;
 }
 .index img {
+  display: inline-block;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.showPage {
   display: block;
   height: 250px;
   margin-left: auto;
   margin-right: auto;
 }
+.ratingP {
+  display: inline-flex;
+  padding-top: -10px;
+
+  gap: 15px;
+  align-items: center;
+}
+.rating,
+.description,
+.comments {
+  color: cornflowerblue;
+  font-size: 22px;
+}
+.description {
+  margin-top: 10px;
+}
+.rating,
+.comments {
+  font-size: 20px;
+}
+.ratingDetails {
+  font-size: 14px;
+  align-self: auto;
+  font-style: italic;
+}
+/* .rating {
+  align-self: auto;
+} */
 /* .index {
   text-align: center;
   font-family: sans-serif;
 } */
 .located {
   padding-top: 10px;
+}
+/* .indexList {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+} */
+nav {
+  background-color: cornflowerblue;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: pink;
+  text-decoration: none;
+}
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
 }
