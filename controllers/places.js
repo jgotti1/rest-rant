@@ -21,7 +21,14 @@ router.get("/:id", (req, res) => {
 });
 
 router.get("/:id/edit", (req, res) => {
-  res.render("../views/places/editForm");
+  let id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render("error404");
+  } else if (!places[id]) {
+    res.render("error404");
+  } else {
+    res.render("places/edit", { place: places[id] });
+  }
 });
 
 //DELETE
@@ -52,12 +59,13 @@ router.delete("/:id/rant/:rantId", (req, res) => {
 
 router.post("/", (req, res) => {
   console.log(req.body);
+
   if (!req.body.pic) {
     // Default image if one is not provided
-    req.body.pic = "http://placekitten.com/400/400";
+    req.body.pic = "/images/opps.jpg";
   }
   if (!req.body.city) {
-    req.body.city = "Anytown";
+    req.body.city = "Not Availible";
   }
   if (!req.body.state) {
     req.body.state = "USA";
@@ -72,7 +80,29 @@ router.post("/:id/rant", (req, res) => {
 
 //PUT's
 router.put("/:id", (req, res) => {
-  res.send(`This Is PUT/places/${req.params.id}`);
+  console.log(req.params.id);
+  let id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render("error404");
+  } else if (!places[id]) {
+    res.render("error404");
+  } else {
+    // Dig into req.body and make sure data is valid
+    if (!req.body.pic) {
+      // Default image if one is not provided
+      req.body.pic = "/images/opps.jpg";
+    }
+    if (!req.body.city) {
+      req.body.city = "Not Availible";
+    }
+    if (!req.body.state) {
+      req.body.state = "USA";
+    }
+
+    // Save the new data into places[id]
+    places[id] = req.body;
+    res.redirect(`/places/${id}`);
+  }
 });
 
 module.exports = router;
