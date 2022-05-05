@@ -5,7 +5,7 @@ function show(data) {
   return (
     <Def>
       <main>
-        <h1>{data.place.name}</h1>
+        <h1 className="dataPlace">{data.place.name}</h1>
         <img className="showPage" src={`/${data.place.pic}`} alt={data.place.name} />
         <h2 className="description">Description</h2>
         <p className="description-details">
@@ -22,6 +22,18 @@ function show(data) {
             <h2 className="rating">Rating:</h2>
             <h2 className="ratingDetails">Not Yet Rated</h2>
           </p>
+        </div>
+        <hr />
+        <div className="showButtonDiv">
+          <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+            Edit
+          </a>
+
+          <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+            <button type="submit" className="btn btn-danger">
+              Delete
+            </button>
+          </form>
         </div>
       </main>
     </Def>

@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dataPlace {
+  color: rgb(65, 129, 249);
+}
+hr {
+  margin: 0;
+}
 h1 {
   text-align: center;
 
@@ -52,7 +63,7 @@ main.home {
 }
 .ratingP {
   display: inline-flex;
-  padding-top: -10px;
+  margin-top: 0;
 
   gap: 15px;
   align-items: center;
@@ -124,4 +135,14 @@ main {
   margin-right: 20px;
   margin-left: 20px;
   background-color: white;
+}
+.showButtonDiv {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.btn-edit {
+  width: 72px;
 }
