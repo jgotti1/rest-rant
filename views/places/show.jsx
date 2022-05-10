@@ -7,7 +7,7 @@ function show(data) {
     <Def>
       <main>
         <h1 className="dataPlace">{data.place.name}</h1>
-        <img className="showPage" src={`/${data.place.pic}`} alt={data.place.name} />
+        <img className="showPage" src={`${data.place.pic}`} alt={data.place.name} />
         <h2 className="description">Description</h2>
         <p className="description-details">
           {data.place.name} is locaated in {data.place.city}, {data.place.state} and serves {data.place.cuisines}

@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
+const mongoose = require("mongoose");
 
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
@@ -18,3 +19,4 @@ app.get("*", function (req, res) {
 });
 app.listen(process.env.PORT);
 console.log("lisntening !");
+console.log("connected to mongo: ", process.env.MONGO_URI);
