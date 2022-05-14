@@ -9,8 +9,9 @@ const placeSchema = new mongoose.Schema({
   founded: {
     type: Number,
     min: [1673, "Surely not that old?!"],
-    max: [new Date().getFullYear(), "Hey, this year is in the future!"],
+    max: [new Date().getFullYear(), "This is the future!"],
   },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 });
 
 placeSchema.methods.showEstablished = function () {
@@ -18,20 +19,3 @@ placeSchema.methods.showEstablished = function () {
 };
 
 module.exports = mongoose.model("Place", placeSchema);
-
-// module.exports = [
-//   {
-//     name: "H-Thai-ML",
-//     city: "Seattle",
-//     state: "WA",
-//     cuisines: "Thai, Pan-Asian",
-//     pic: "./images/thai.jpg",
-//   },
-//   {
-//     name: "Coding Cat Cafe",
-//     city: "Phoenix",
-//     state: "AZ",
-//     cuisines: "Coffee, Bakery",
-//     pic: "./images/coffee.jpg",
-//   },
-// ];
